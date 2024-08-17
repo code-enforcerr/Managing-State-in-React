@@ -6,7 +6,7 @@ function TaskItem({ task, onEdit, onDelete, onToggleComplete }) {
             <button onClick={() => onToggleComplete(task.id)}>
                 {task.completed ? 'Undo' : 'Complete'}
             </button>
-            <button onClick={() => onEdit(task)}>Edit</button> {/* Triggers editing mode */}
+            <button onClick={() => onEdit(task)}>Edit</button> 
             <button onClick={() => onDelete(task.id)}>Delete</button>
         </div>
     );

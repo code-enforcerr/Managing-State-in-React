@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 function TaskList() {
     const [tasks, setTasks] = useState([]);
-    const [editingTask, setEditingTask] = useState(null); // State to track the task being edited
+    const [editingTask, setEditingTask] = useState(null); 
 
     useEffect(() => {
         const savedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
@@ -26,7 +26,7 @@ function TaskList() {
 
     const editTask = (updatedTask) => {
         setTasks(tasks.map(task => task.id === updatedTask.id ? updatedTask : task));
-        setEditingTask(null); // Clear editing state after update
+        setEditingTask(null); 
     };
 
     const toggleComplete = (id) => {
@@ -34,12 +34,12 @@ function TaskList() {
     };
 
     const startEditing = (task) => {
-        setEditingTask(task); // Set the task to be edited
+        setEditingTask(task); 
     };
 
     return (
         <div>
-            {/* If editingTask is null, show the form to add a new task; otherwise, show the form to edit the task */}
+           
             <TaskForm onSubmit={editingTask ? editTask : addTask} initialData={editingTask} />
             <div className="task-list">
                 {tasks.map(task => (
